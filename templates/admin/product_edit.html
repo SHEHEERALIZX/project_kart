@@ -1,0 +1,87 @@
+
+{% extends 'admin/admin.html'%}
+{% block content %}
+
+<div>
+<form  action="{% url 'product_edit' products.id %}" class="form-horizontal" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend>PRODUCTS</legend>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+  <div class="col-md-4">
+  <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required=""  value="{{products.product_name}}"type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_desc">PRODUCT DESCRIPTION </label>  
+  <div class="col-md-4">
+  <input id="product_desc" name="product_desc" placeholder="PRODUCT DESCRIPTION" class="form-control input-md" required=""  value="{{products.product_desc}}"type="text">
+    
+  </div>
+  
+</div>
+
+<!-- Select Basic -->
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
+  <div class="col-md-4">
+    <select id="product_categorie" name="product_categorie" class="form-control">
+    </select>
+  </div>
+</div> -->
+
+
+
+<!-- Text input-->
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label" for="product_weight">PRODUCT WEIGHT</label>  
+  <div class="col-md-4">
+  <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div> -->
+<div class="form-group">
+    <label class="col-md-4 control-label" for="product_price">PRODUCT PRICE</label>  
+    <div class="col-md-4">
+    <input id="product_price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md" required="" value="{{products.product_price}}"type="number">
+      
+    </div>
+  </div>
+  
+
+
+
+    
+ <!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="document">Product Image</label>
+  <div class="col-md-4">
+    <input id="document" name="document" class="input-file" type="file" value="{{products.product_image}}" >
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Product add</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
+  </div>
+  </div>
+
+</fieldset>
+</form>
+
+</div>
+
+{% endblock content %}
+
